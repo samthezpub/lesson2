@@ -45,21 +45,16 @@ public class Decimal {
     }
 
     public static Decimal Multiplication(Decimal first, Decimal second){
-        if (first.getDenominator() == second.getDenominator()){
             int multDenominator = first.getDenominator() * second.getDenominator();
             int multNumerator = first.getNumerator() * second.getNumerator();
             return new Decimal(multNumerator,multDenominator);
-        }
-        return first;
+
     }
 
     public static Decimal Division(Decimal first, Decimal second){
-        if (first.getDenominator() == second.getDenominator()){
             int divDenominator = first.getDenominator() * second.getNumerator();
             int divNumerator = first.getNumerator() * second.getDenominator();
             return new Decimal(divNumerator,divDenominator);
-        }
-        return first;
     }
 
     public int getDenominator() {
