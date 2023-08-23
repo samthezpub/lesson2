@@ -19,6 +19,16 @@ public class Main {
         );
         human.setAdress("123");
 
-        System.out.print(human.getAdress());
+        System.out.println(human.getAdress());
+
+        Decimal firstDecimal = new Decimal(10, 3);
+        Decimal secondDecimal = new Decimal(12, 2);
+        Decimal sum = Decimal.Sum(firstDecimal, secondDecimal);
+        System.out.println(sum.getNumerator());
+        System.out.println('-');
+        System.out.println(sum.getDenominator());
+
+
     }
+
 }

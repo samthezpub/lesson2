@@ -10,9 +10,56 @@ public class Decimal {
         this.Denominator=denominator;
     }
 
-    public double Dash()
+    public static Decimal Sum(Decimal first, Decimal second)
     {
-        return (double) Numerator /Denominator;
+        if (first.getDenominator() == second.getDenominator()){
+           int sumDenominator = first.getDenominator() + second.getDenominator();
+           int sumNumerator = first.getNumerator() + second.getNumerator();
+           return new Decimal(sumNumerator,sumDenominator);
+        }
+        else{
+            int commonDenominator = first.getDenominator() * second.getDenominator();
+            first.setNumerator(first.getNumerator() * second.getDenominator());
+            second.setNumerator(second.getNumerator() * first.getDenominator());
+
+            int sumNumerator = first.getNumerator() + second.getNumerator();
+            return new Decimal(sumNumerator,commonDenominator);
+        }
+
+    }
+
+    public static Decimal Minus(Decimal first, Decimal second){
+        if (first.getDenominator() == second.getDenominator()){
+            int minDenominator = first.getDenominator() - second.getDenominator();
+            int minNumerator = first.getNumerator() - second.getNumerator();
+            return new Decimal(minNumerator,minDenominator);
+        }
+        else{
+            int commonDenominator = first.getDenominator() * second.getDenominator();
+            first.setNumerator(first.getNumerator() * second.getDenominator());
+            second.setNumerator(second.getNumerator() * first.getDenominator());
+
+            int minNumerator = first.getNumerator() - second.getNumerator();
+            return new Decimal(minNumerator, commonDenominator);
+        }
+    }
+
+    public static Decimal Multiplication(Decimal first, Decimal second){
+        if (first.getDenominator() == second.getDenominator()){
+            int multDenominator = first.getDenominator() * second.getDenominator();
+            int multNumerator = first.getNumerator() * second.getNumerator();
+            return new Decimal(multNumerator,multDenominator);
+        }
+        return first;
+    }
+
+    public static Decimal Division(Decimal first, Decimal second){
+        if (first.getDenominator() == second.getDenominator()){
+            int divDenominator = first.getDenominator() * second.getNumerator();
+            int divNumerator = first.getNumerator() * second.getDenominator();
+            return new Decimal(divNumerator,divDenominator);
+        }
+        return first;
     }
 
     public int getDenominator() {
