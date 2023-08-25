@@ -28,6 +28,27 @@ public class Main {
         System.out.println('-');
         System.out.println(sum.getDenominator());
 
+        Decimal minfirstDecimal = new Decimal(10, 3);
+        Decimal minsecondDecimal = new Decimal(12, 2);
+        Decimal min = Decimal.Minus(minfirstDecimal, minsecondDecimal);
+        System.out.println(min.getNumerator());
+        System.out.println('-');
+        System.out.println(min.getDenominator());
+
+        Decimal multfirstDecimal = new Decimal(10, 3);
+        Decimal multsecondDecimal = new Decimal(12, 2);
+        Decimal mult = Decimal.Multiplication(multfirstDecimal, multsecondDecimal);
+        System.out.println(mult.getNumerator());
+        System.out.println('-');
+        System.out.println(mult.getDenominator());
+
+        Decimal divfirstDecimal = new Decimal(10, 3);
+        Decimal divsecondDecimal = new Decimal(12, 2);
+        Decimal div = Decimal.Division(divfirstDecimal, divsecondDecimal);
+        System.out.println(div.getNumerator());
+        System.out.println('-');
+        System.out.println(div.getDenominator());
+
 
     }
 
